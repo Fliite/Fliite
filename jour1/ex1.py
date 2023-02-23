@@ -1,9 +1,4 @@
 from random import randint
 
-def liste_hasard(val):
-    var = randint(0,val)
-    liste = []
-    liste.append(var)
-    return(liste)
-
-print(liste_hasard(100))
+def randlist(length, min, max):
+    return [randint(min, max) for i in range(length)]
