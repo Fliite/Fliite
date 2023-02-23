@@ -14,6 +14,7 @@ def sort_list_up(L):
 L2 = sort_list_up(L)
 
 def add_x(L, x):
+    L2 = []
     L.append(x)
     L2 = sort_list_up(L)
     return L2
