@@ -1,4 +1,4 @@
-L = [10,30,15,-22,200,120,85,90,-62,-22,56,-13]
+Liste = [10,30,15,-22,200,120,85,90,-62,-22,56,-13]
 
 def derivative(L):
     K = []
@@ -12,7 +12,7 @@ def derivative(L):
     return K
 
 def main():
-    print(derivative(L))
+    print(derivative(Liste))
 
 if __name__ == "__main__":
     main()
