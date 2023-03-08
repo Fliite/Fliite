@@ -21,7 +21,11 @@ def fusionDico(dico1, dico2):
     for i in dico2:
         dico.update({i : dico2[i]})
     for lettre in dico.keys():
-        
+        if lettre in dico1 and lettre in dico2:
+            dico[lettre] = dico1[lettre] + dico2[lettre]
+            if dico[lettre] == 0:
+                del dico[lettre]
+    return dico
 
 def main():
     n = int(input("quelle taille des deux listes ?"))
@@ -30,4 +34,5 @@ def main():
     print(dico1,'\t',dico2)
     print(fusionDico(dico1, dico2))
 
-main()
+if __name__ == "__main__":
+    main()
