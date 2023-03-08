@@ -4,3 +4,5 @@ def retourne_cle_val():
     cle = [i for i in dico.keys()]
     val = [i for i in dico.values()]
     return cle, val
+
+print(retourne_cle_val())
