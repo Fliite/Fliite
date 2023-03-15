@@ -1,4 +1,4 @@
-// rgb : rouge, vert, bleu et c : chroma
+// rgb : rouge, vert, bleu et c : clear
 void ConvertToWavelength(r, g, b, c)
 {
     //vérifier si les valeurs sont entre 0 et 255, || = ou

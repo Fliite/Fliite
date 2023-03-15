@@ -1,7 +1,7 @@
 chaine = "RbresTaPNpVXgUfIuHJhztMAnDGKyqBSZcdYLvOojFQlWikxCmwE"
 
 def Carac_occurence(string):
-    # creer un dico qui associe chaque lettre a son nombre d'occurence
+    # creer un dico qui associe chaque lettre a son nombre d'occurence dans la chaine
     dico = {}
     for i in string:
         if i not in dico:

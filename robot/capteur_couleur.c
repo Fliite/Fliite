@@ -1,7 +1,5 @@
  #include "MeAuriga.h"
  #include "Wire.h"
- #include <RVB_convert.c>
-
 
  MeColorSensor colorsensor(PORT_6);
 
@@ -9,6 +7,7 @@ uint8_t colorresult;
 uint16_t r=0,g=0,b=0,c=0;
 uint8_t grayscale = 0;
 long systime = 0,colorcode=0; //ce sont des variables longues 
+
 void setup()
 {
   Serial.begin(115200); //ouvre le port série sur la bande 115200
