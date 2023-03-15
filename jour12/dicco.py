@@ -1,3 +1,6 @@
+#tiree de "Eval 4 – SUP - Dictionnaires"
+#Exercice 2
+
 def est_Premier(n):
     #Renvoie True si n est premier, False sinon
     for i in range(2, n):
@@ -23,12 +26,13 @@ def demande():
         listed.append(n)
     return listed
 
-def rentre_dans_dico(liste):
+def rentre_dans_dico():
     #Renvoie un dictionnaire avec les nombres de l'utilisateur comme clés 
     #et les nombres de la liste de premiers comme valeurs
+    liste = demande()
     dico = {}
     for i in liste:
         dico.update({i : premiers(i)})
     return dico
 
-print(rentre_dans_dico(demande()))
+print(rentre_dans_dico())
