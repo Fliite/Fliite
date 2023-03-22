@@ -1,4 +1,4 @@
-M = [[4,5,9],[9,1,2,],[6,7,4]]
+M = [[4,5,9],[9,1,2],[6,7,4]]
 
 def estCarre(M):
     for i in range(len(M)):
@@ -33,3 +33,5 @@ def main(M):
             print("la matrice est magique")
     else:
         print("la matrice n'est pas carrée")
+
+main(M)
