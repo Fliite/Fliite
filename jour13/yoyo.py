@@ -14,6 +14,8 @@ def ajouterNoeud(monReseau, noeud):
     else:
         print("Ce noeud existe déjà")
 
+def lire_noeud():
+
 #entrer une liste de string
 #les noeuds seront vides (sans voisins)
 def ajoutListe_Noeuds(monReseau, liste):
