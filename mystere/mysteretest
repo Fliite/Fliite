@@ -1,0 +1,6 @@
+def test():
+    k == True
+    if k True :
+        return None
+
+test()
