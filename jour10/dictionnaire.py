@@ -20,7 +20,7 @@ def FrançaisCharabia():
     return Français_Charabia
 
 def mot():
-    mot = input("Entrez un mot : ")
+    mot = 'lucas'
     return mot
 
 def minuscule(stringg, Minuscule):
@@ -28,6 +28,8 @@ def minuscule(stringg, Minuscule):
     for i in stringg:
         if i in Minuscule:
             stringg = stringg.replace(i, Minuscule[i])
+        else:
+            stringg = '?'
     return stringg
 
 def majuscule(stringg, Majuscule):
@@ -35,6 +37,8 @@ def majuscule(stringg, Majuscule):
     for i in stringg:
         if i in Majuscule:
             stringg = stringg.replace(i, Majuscule[i])
+        else:
+            stringg = '?'
     return stringg
         
 def françaisEnCharabia(mot, Français_Charabia):

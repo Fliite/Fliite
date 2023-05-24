@@ -6,13 +6,13 @@
 
 def plateau_vide(size):
     plateau = []
-    for i in range(size):
+    for i in range(size): #permet de créer les lignes
         plateau.append([])
-        for j in range(size):
+        for j in range(size): #permet de créer les colonnes
             plateau[i].append(" ")
     return plateau
 
-def plateau_plein(size):
+def plateau_plein(size): 
     #on construit un plateau carre de taille size
     #on replit le plateau avec le nom des cases (A1, A2, A3, B1, B2, B3, C1, C2, C3 etc)
     #l'affaichage s'adaptera à la taille du plateau
@@ -24,18 +24,9 @@ def plateau_plein(size):
     return plateau
 
 def jouer1(plateau, size):
-    while True:
-        joueur1 = input("Joueur 1 : quelle case voulez-vous jouer ? ")
-        for i in range(size):
-            for j in range(size):
-                if joueur1 == plateau[i][j] and plateau[i][j] != "O" and plateau[i][j] != "X":
-                    #un peu brutal mais évite de rconvertir des str en int
-                    plateau[i][j] = "X"
-                else:
-                    print("Cette case est déjà jouée")
-                    jouer1(plateau, size)
-        afficher_plateau(plateau)
-        checkwin(plateau, size)
+    #le joueur 1 joue
+    while 
+
 
 def afficher_plateau(plateau):
     for i in range(len(plateau)):
@@ -70,7 +61,7 @@ def main():
     size = 3
     plein = plateau_plein(size)
     afficher_plateau(plein)
-    jouer(plein, size)
+    jouer1(plein, size)
 
 if __name__ == "__main__":
     main()
