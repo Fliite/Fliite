@@ -4,64 +4,57 @@
 #le plateau plein sert à afficher les coups joués
 
 
-def plateau_vide(size):
+def plateau_plein(size):
     plateau = []
-    for i in range(size): #permet de créer les lignes
-        plateau.append([])
-        for j in range(size): #permet de créer les colonnes
-            plateau[i].append(" ")
-    return plateau
-
-def plateau_plein(size): 
-    #on construit un plateau carre de taille size
-    #on replit le plateau avec le nom des cases (A1, A2, A3, B1, B2, B3, C1, C2, C3 etc)
-    #l'affaichage s'adaptera à la taille du plateau
-    plateau = plateau_vide(size)
     for i in range(size):
-        lettre = chr(65 + i)
+        lettre = chr(65 + i) #les letttres correspondent aux lignes
+        plateau.append([])
         for j in range(size):
-            plateau[i][j] = str(lettre) + str(j)
+            plateau[i].append(str(lettre) + str(j + 1))  # Ajouter +1 pour les numéros de colonne
     return plateau
-
-def jouer1(plateau, size):
-    #le joueur 1 joue
-    while 
-
 
 def afficher_plateau(plateau):
     for i in range(len(plateau)):
-        print(plateau[i])
+        print('\n')
+        for j in range(len(plateau[i])):
+            print(plateau[i][j], end=" ")
+
+afficher_plateau(plateau_plein(3))
+
+def a_gagné(gagnant): #permet d'associer un nom de joueur à un symbole
+    print("Le joueur", gagnant, "a gagné !")
+
 
 def checkwin(plateau, size):
-    #verifie si un joueur a gagné
-    #il faut que les size cases soient identiques(diagonales, lignes, colonnes)
-    
-    #diagonales
-    for i in range(size-1):
-        if plateau[i][i] == plateau[i+1][i+1]:
-            print("Le joueur", plateau[i][i], "a gagné !")
+    # Vérifie si un joueur a gagné
+    # Il faut que les "size" cases soient identiques (diagonales, lignes, colonnes)
+
+    # Diagonales
+    for i in range(size-1): # (size-1) pour ne pas déborder du tableau
+        if plateau[i][i] == plateau[i+1][i+1]: #diag 1
+            gagnant = plateau[i][i]
+            a_gagné(gagnant)
             exit()
-        elif plateau[i][size-i] == plateau[i+1][size-i-1]:
-            print("Le joueur", plateau[i][size-i], "a gagné !")
+        elif plateau[i][size-i-1] == plateau[i+1][size-i-2]:  # Modifier size-i en size-i-1 et ajouter size-i-2
+            gagnant = plateau[i][size-i-1]
+            a_gagné(gagnant)
             exit()
-    #lignes
+
+    # Lignes
     for i in range(size):
-        for j in range(size):
+        for j in range(size-1):  # Modifier size-1 pour éviter un débordement de tableau
             if plateau[i][j] == plateau[i][j+1]:
-                print("Le joueur", plateau[i][j], "a gagné !")
+                gagnant = plateau[i][j]
+                a_gagné(gagnant)
                 exit()
-    #colonnes
+
+    # Colonnes
     for i in range(size):
-        for j in range(size):
+        for j in range(size-1):  # Modifier size-1 pour éviter un débordement de tableau
             if plateau[j][i] == plateau[j+1][i]:
-                print("Le joueur", plateau[j][i], "a gagné !")
+                gagnant = plateau[j][i]
+                a_gagné(gagnant)
                 exit()
 
-def main():
-    size = 3
-    plein = plateau_plein(size)
-    afficher_plateau(plein)
-    jouer1(plein, size)
-
-if __name__ == "__main__":
-    main()
+def tour(plateau):
+    
