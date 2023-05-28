@@ -2,7 +2,7 @@ from random import randint
 from time import sleep
 
 #fonction qui fait jouer un 2 eme joueur ou un bot
-def player2(bot, nbatons):
+def joueur2(bot, nbatons):
     #le bot joue si bot == True
     if bot == True: 
         sleep(1)
@@ -43,7 +43,7 @@ def trame(nbatons, bot):
         #condition qui vérifie que le joueur 2 ne retire qu'entre 1 et 3 batons
         #joueur 2
         while pl2 < 1 or pl2 > 3:
-            pl2 = player2(bot, nbatons)
+            pl2 = joueur2(bot, nbatons)
         nbatons = nbatons - pl2
         checkwin(nbatons)
 
