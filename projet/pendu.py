@@ -3,7 +3,7 @@ import time
 
 def lire_dictionnaire(): #fonction qui lit le dictionnaire et le met dans une grande liste
     mots = [] 
-    with open("projet/aa.txt", "r") as fichier: #ouvre le fichier en mode lecture
+    with open("projet/dico.txt", "r") as fichier: #ouvre le fichier en mode lecture
         mots = fichier.read().splitlines() #splitlines() permet de séparer les mots en les mettant dans une liste
     return mots
 
