@@ -1,6 +1,10 @@
 import random
 import time
 
+#c'est un jeu du pendu en console à partir d'un dictionnaire de mots sans accents
+#le joueur a 8 tentatives pour deviner les lettres du mot
+#il faut entrer une seule lettre à la fois
+
 def lire_dictionnaire(): #fonction qui lit le dictionnaire et le met dans une grande liste
     mots = [] 
     with open("projet/dico.txt", "r") as fichier: #ouvre le fichier en mode lecture
@@ -23,7 +27,7 @@ def afficher_lettres_fausses(lettres_fausses): #fonction qui affiche les lettres
     print("Lettres fausses :")
     for lettre in lettres_fausses:
         print(lettre, end=" ") #end=" " permet de ne pas faire de retour à la ligne
-    print("\n") 
+    print("\n")
 
 def deviner_mot(mot): #boucle principale du jeu
     lettres_trouvees = [] #permet de stocker les lettres trouvées pour les afficher ensuite
