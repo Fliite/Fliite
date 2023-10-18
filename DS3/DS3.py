@@ -3,7 +3,6 @@ pL2 = [1,1,4,5,3]
 pL3 = [5,1,2,3,8,-5,-4,7]
 pL4 = [1,4,3,4,5,1,5,5]
 
-
 def couples_consecutifs(pL):
 #retourne liste de couples de valeurs consécutives successives dans pL
     l = []
