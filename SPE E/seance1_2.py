@@ -1,6 +1,9 @@
 # variables test 
 Rackam1 = [[50, "n"], [20, "e"], [30, "s"], [45, "o"], [12, "s"], [80, "o"], [63, "s"], [48, "s"], [12,"o"], [3,"o"], [8, "n"]]
 Dupont = "10/6 -24 15/6 -5 22/6 -35 30/6 93.5 4/7 -10 8.7 -10 15/7 -5 15.7 -15 20/7 11.5"
+Code1L = "ACDEFGHIKLMNPQRSTVWY"
+Code3L = Code3L = ["ALA" , "CYS" , "ASP" , "GLU" , "PHE" , "GLY" , "HIS" , "ILE" , "LYS" , "LEU" , "MET" , "ASN"
+, "PRO" , "GLN" , "ARG" , "SER" , "THR" , "VAL" , "TRP" , "TYR"] 
 ######
 
 
@@ -91,13 +94,79 @@ def bookmaker(str):
     return Solde, OpeSeptembre
 
 def CaracSolitaire(str):
-    liste = list(str)
-    print(liste)
-    for i in [1,range(liste)-1]:
-        if liste[i] != liste[i-1] or liste[i] != liste[i+1]:
-            liste.pop(i)
-        chaine = "".join(liste)
-    return liste
+    #Ecrire une fonction qui reçoit une chaîne de caractères et élimine chaque caractère qui est different du precedent ou du suivant
+    l = []
+    for i in range(len(str)):
+        if i == 0:
+            if str[i] == str[i+1]:
+                l.append(str[i])
+        elif i == len(str) - 1:
+            if str[i] == str[i-1]:
+                l.append(str[i])
+        else:
+            if str[i] == str[i+1] or str[i] == str[i-1]:
+                l.append(str[i])
+    return "".join(l)
+
+def GrandeSequence(liste):
+    #Écrire une fonction qui retourne la longueur de la séquence de valeurs croissantes dans une liste de valeurs entières
+    #on mesure la longeur de la sequence ou les valeurs sont strictement croissantes
+    l = []
+
+def partList(liste, i, j):
+    #Principe : Il s’agit de choisir un élément d’une liste L, appelé pivot et de séparer cette liste en deux sous-listes comportant les éléments inférieurs au pivot, le pivot puis les éléments supérieurs.
+    #Par exemple, avec L = [3,5,1,6,2,4,7], i=0 et j=6, la liste obtenue après l’appel partition(L,i,j) est [2,1,3,5,6,4,7] et la valeur retournée est égale à 2.
+    pivot = liste[i]
+    l = liste.copy()
+    l.pop(i)
+    l.insert(j, pivot)
+    return l
+
+
+def TextToIndex(string):
+    string = string.lower()
+    liste = string.split()
+    dico = {}
+    for i in range(len(liste)):
+        if liste[i] not in dico:
+            dico[liste[i]] = [i]
+        else:
+            dico[liste[i]].append(i)
+    return dico
+
+def ListeEnDico(liste1, liste2):
+    if len(liste1) != len(liste2):
+        raise ValueError("Les deux listes doivent avoir la même longueur")
+    else:
+        dico = {}
+        for i in range(len(liste1)):
+            dico[liste1[i]] = liste2[i]
+    return dico
+
+def DicoEnListe(dico):
+    liste1 = []
+    liste2 = []
+    for i in dico.keys():
+        liste1.append(i)
+        liste2.append(dico[i])
+    return liste1, liste2
+
+def ProtAmines(string, dico):
+    #Ecrire une fonction qui reçoit une séquence de protéines et retourne la liste des acides aminés qui la composent
+    listeAmines = []
+    for i in range(len(string)):
+        if string[i] in dico.keys():
+            listeAmines.append(dico[string[i]])
+    return listeAmines
+
+def AminesProt(liste, dico):
+    #Ecrire une fonction qui reçoit une liste d’acides aminés et retourne la séquence de protéines correspondante
+    string = ""
+    for i in range(len(liste)):
+        for j in dico.keys():
+            if liste[i] == dico[j]:
+                string += j
+    return string
 
 # appel des foncions
 #print("Rackam",rackam(Rackam1))
@@ -107,4 +176,9 @@ def CaracSolitaire(str):
 #print("MemeVal2", MemeVal2("12345", "246810"))
 #print("PermutListe", PermutListe([1, 2, 3, 4, 5], [2, 4, 1, 5, 3]))
 #print("bookmaker", bookmaker(Dupont))
-print(CaracSolitaire("aasrffzrrrzzdttl"))
+#print(CaracSolitaire("aasrffzrrrzzdttl"))
+#print(GrandeSequence([1,8,-9,45,-75,3,9,-1,5,-9,4,-7,4,8,17,25,87,-4]))
+#print(TextToIndex("Ceci est un texte. Un exemple de texte."))
+#print(ListeEnDico(Code1L, Code3L))
+#print(ProtAmines("CDEIKLMNPQR", ListeEnDico(Code1L, Code3L)))
+
