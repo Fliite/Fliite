@@ -113,15 +113,10 @@ def GrandeSequence(liste):
     #on mesure la longeur de la sequence ou les valeurs sont strictement croissantes
     l = []
 
-def partList(liste, i, j):
-    #Principe : Il s’agit de choisir un élément d’une liste L, appelé pivot et de séparer cette liste en deux sous-listes comportant les éléments inférieurs au pivot, le pivot puis les éléments supérieurs.
-    #Par exemple, avec L = [3,5,1,6,2,4,7], i=0 et j=6, la liste obtenue après l’appel partition(L,i,j) est [2,1,3,5,6,4,7] et la valeur retournée est égale à 2.
-    pivot = liste[i]
-    l = liste.copy()
-    l.pop(i)
-    l.insert(j, pivot)
-    return l
-
+def PivoterListe(liste, i, j):
+    if i >= j or j > len(liste):
+        raise ValueError("i doit être inférieur à j et j doit être inférieur à la longueur de la liste")
+    
 
 def TextToIndex(string):
     string = string.lower()
